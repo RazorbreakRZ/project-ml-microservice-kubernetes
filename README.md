@@ -48,3 +48,12 @@ source .devops/bin/activate
 * Setup and Configure Kubernetes locally
 * Create Flask app in Container
 * Run via kubectl
+
+### Kubernetes logs
+For logging purposes, an extra script `./logs_kubernetes.sh` follows the log output of the POD once it's up and running.
+
+### Cleanup
+To delete the pod, you can run the following command:
+```bash
+kubectl delete pod/ml-microservice-kubernetes
+```
