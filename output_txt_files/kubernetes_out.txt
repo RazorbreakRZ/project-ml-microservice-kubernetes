@@ -1,3 +1,16 @@
+$ ./run_kubernetes.sh 
+pod/ml-microservice-kubernetes created
+NAME                         READY   STATUS              RESTARTS   AGE
+ml-microservice-kubernetes   0/1     ContainerCreating   0          0s
+error: unable to forward port because pod is not running. Current status=Pending
+$ ./run_kubernetes.sh 
+Error from server (AlreadyExists): pods "ml-microservice-kubernetes" already exists
+NAME                         READY   STATUS    RESTARTS   AGE
+ml-microservice-kubernetes   1/1     Running   0          3s
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+$ ./logs_kubernetes.sh
+Handling connection for 8000
  * Serving Flask app "app" (lazy loading)
  * Environment: production
    WARNING: Do not use the development server in a production environment.
@@ -17,3 +30,5 @@
 0     0  6.575  296.0     15.3  396.9   4.98
 [2023-09-10 14:08:49,270] INFO in app: Prediction result: [20.35373177134412]
 127.0.0.1 - - [10/Sep/2023 14:08:49] "POST /predict HTTP/1.1" 200 -
+$ kubectl delete pod/ml-microservice-kubernetes
+pod "ml-microservice-kubernetes" deleted
