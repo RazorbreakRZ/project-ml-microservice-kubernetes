@@ -42,6 +42,30 @@ source .devops/bin/activate
 2. Run in Docker:  `./run_docker.sh`
 3. Run in Kubernetes:  `./run_kubernetes.sh`
 
+### Make a prediction
+To run a prediction against the container, execute the script `./make_prediction.sh`. This will make a `POST` request to `/predict` endpoint of the service, passing the header `Content-Type: application/json` and following JSON body:
+```json
+{  
+    "CHAS":{  
+        "0":0
+    },
+    "RM":{  
+        "0":6.575
+    },
+    "TAX":{  
+        "0":296.0
+    },
+    "PTRATIO":{  
+        "0":15.3
+    },
+    "B":{  
+        "0":396.9
+    },
+    "LSTAT":{  
+        "0":4.98
+    }
+}
+```
 ### Kubernetes Steps
 
 * Setup and Configure Docker locally
