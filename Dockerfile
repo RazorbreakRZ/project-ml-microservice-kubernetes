@@ -1,7 +1,7 @@
 FROM python:3.7.3-stretch
 
-LABEL Name="ml-microservice-kubernetes"
-LABEL Version="1.0.0"
+LABEL name="ml-microservice-kubernetes"
+LABEL version="1.0.0"
 
 ## Step 1:
 # Create a working directory
